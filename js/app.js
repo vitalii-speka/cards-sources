@@ -1,8 +1,7 @@
 const slides = document.querySelectorAll('.slide')
 
 for (const slide of slides) {
-    slide.addEventListener('focus', () => {
-        console.log('click slide', slide.h3);
+    slide.addEventListener('click', () => {
         clearActiveClasses()
 
         slide.classList.add('active')
