@@ -1,18 +1,23 @@
 function slidesPlugin(actionSlide = 0) {
-  const slides = document.querySelectorAll(".slide");
+  const slides = document.querySelectorAll('.slide');
 
-  slides[actionSlide].classList.add("active");
+  slides[actionSlide].classList.add('active');
   for (const slide of slides) {
-    slide.addEventListener("click", () => {
+    slide.addEventListener('click', () => {
       clearActiveClasses();
 
-      slide.classList.add("active");
+      slide.classList.add('active');
     });
+    // slide.addEventListener('mouseover', () => {
+    //   clearActiveClasses();
+
+    //   slide.classList.add('active');
+    // });
   }
 
   function clearActiveClasses() {
     slides.forEach((slide) => {
-      slide.classList.remove("active");
+      slide.classList.remove('active');
     });
   }
 }
