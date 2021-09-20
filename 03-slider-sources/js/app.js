@@ -8,6 +8,7 @@ const container = document.querySelector('.container');
 const mainSlide = document.querySelector('.main-slide');
 
 const slideCount = mainSlide.querySelectorAll('div').length;
+console.log('🚀 ~ file: app.js ~ line 11 ~ mainSlide', mainSlide);
 
 let activeSlideIndex = 0;
 
@@ -15,12 +16,19 @@ sidebar.style.top = `-${(slideCount - 1) * 100}vh`;
 
 upBtn.addEventListener('click', () => {
   change('up');
-  console.log('up');
 });
 
 downBtn.addEventListener('click', () => {
   change('down');
-  console.log('down');
+});
+
+document.addEventListener('keydown', (event) => {
+  console.log(event);
+  if (event.code === 'ArrowUp') {
+    change('up');
+  } else if (event.code === 'ArrowDown') {
+    change('down');
+  }
 });
 
 function change(direction) {
@@ -37,6 +45,7 @@ function change(direction) {
   }
 
   const height = container.clientHeight;
+
   mainSlide.style.transform = `translateY(-${activeSlideIndex * height}px)`;
   sidebar.style.transform = `translateY(${activeSlideIndex * height}px)`;
 }
