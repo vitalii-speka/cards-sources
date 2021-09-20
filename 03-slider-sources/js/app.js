@@ -33,12 +33,12 @@ document.addEventListener('keydown', (event) => {
 
 function change(direction) {
   if (direction === 'up') {
-    activeSlideIndex++;
+    activeSlideIndex += 1;
     if (activeSlideIndex === slideCount) {
       activeSlideIndex = 0;
     }
   } else if (direction === 'down') {
-    activeSlideIndex--;
+    activeSlideIndex -= 1;
     if (activeSlideIndex < 0) {
       activeSlideIndex = slideCount - 1;
     }
